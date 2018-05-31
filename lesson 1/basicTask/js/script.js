@@ -1,5 +1,5 @@
 /* 2) В файле скрипта создать 2 переменные, которые будут получать данные от пользователя: */
-let	budgetForTheMonth = prompt('Ваш бюджет на месяц?', ''),
+var	budgetForTheMonth = prompt('Ваш бюджет на месяц?', ''),
 	storeName = prompt('Название вашего магазина?', ''),
 	time = 19;
 
@@ -27,13 +27,14 @@ var budgetForTheMonth,
 for (let i = 0; i < 3; i++){
 	let a =  prompt('Какой тип товаров будем продавать?', '');
 
-	if ((typeof(a)) === 'string' && (typeof(a)) === null &&  a != '' && a.length < 50) {
+	if ((typeof(a)) === 'string' && a != '' && a.length < 50) {
 		console.log('Все верно!');
 		mainList.shopGoods[i] = a; 
-	} else {
-		console.log('Ошибка!!!');
-	}
+		} else {
+				console.log('Ошибка!');	
+			}
 }
+
 
 if (time < 0) {
 	console.log('Такого не может быть');

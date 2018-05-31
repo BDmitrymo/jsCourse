@@ -45,3 +45,31 @@ while (num < 55);
 for (let i = 0; i < 8; i++){
 	console.log(i);
 }
+
+for (let i = 0; i < 3; i++){
+	let a =  prompt('Какой тип товаров будем продавать?', '');
+
+	if ((typeof(a)) === 'string' && a != '' && a.length < 50) {
+		console.log('Все верно!');
+		mainList.shopGoods[i] = a; 
+		} else {
+				console.log('Ошибка!');	
+			}
+}
+
+/* 1) Переписать наш цикл for еще двумя способами и закомментировать их */
+/*
+	for (let i = 0; i < 3; i++){
+		var a = prompt('Какой тип товаров будем продавать?', '');
+		((typeof(a)) === 'string' && a != '' && a.length < 50) ? mainList.shopGoods[i] = a : console.log('Ошибка!');	
+	}
+
+	var a, res = 0;
+	do {
+		a =  prompt('Какой тип товаров будем продавать?', '');
+		if ((typeof(a)) === 'string' && a != '' && a.length < 50) {
+			mainList.shopGoods[res] = a; 
+			break;
+		}
+	} while (true)
+*/
