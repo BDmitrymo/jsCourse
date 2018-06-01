@@ -52,16 +52,16 @@ for (let i = 0; i < 3; i++){
 	if ((typeof(a)) === 'string' && a != '' && a.length < 50) {
 		console.log('Все верно!');
 		mainList.shopGoods[i] = a; 
-		} else {
-				console.log('Ошибка!');	
-			}
+	} else {
+		i = i - 1;	
+	}
 }
 
 /* 1) Переписать наш цикл for еще двумя способами и закомментировать их */
 /*
 	for (let i = 0; i < 3; i++){
 		var a = prompt('Какой тип товаров будем продавать?', '');
-		((typeof(a)) === 'string' && a != '' && a.length < 50) ? mainList.shopGoods[i] = a : console.log('Ошибка!');	
+		((typeof(a)) === 'string' && a != '' && a.length < 50) ? mainList.shopGoods[i] = a : i = i - 1;;	
 	}
 
 	var a, res = 0;
