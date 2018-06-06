@@ -17,7 +17,7 @@ var	nameX = document.getElementsByClassName('name')[0],
 
 console.log(isopenValue);
 
-var goodsTtem = document.getElementsByClassName('goods-item')[0];
+var goodsTtem = document.getElementsByClassName('goods-item');
 
 var goodsItemBtn = document.getElementsByTagName('button')[1],
 	countBudgetBtn = document.getElementsByTagName('button')[2],
