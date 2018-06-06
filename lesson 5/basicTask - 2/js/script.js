@@ -1,34 +1,34 @@
 var openBtn = document.getElementById('open-btn');
 
-var	nameX = document.getElementsByClassName('name'),
-	name_value = document.getElementsByClassName('name-value'), 
-	budgetX = document.getElementsByClassName('budget'),
-	budgetValue = document.getElementsByClassName('budget-value'),
-	goodsX = document.getElementsByClassName('goods'),
-	goodsValue = document.getElementsByClassName('goods-value'),
-	itemsX = document.getElementsByClassName('items'),
-	itemsValue = document.getElementsByClassName('items-value'),
+var	nameX = document.getElementsByClassName('name')[0],
+	nameValue = document.getElementsByClassName('name-value')[0], 
+	budgetX = document.getElementsByClassName('budget')[0],
+	budgetValue = document.getElementsByClassName('budget-value')[0],
+	goodsX = document.getElementsByClassName('goods')[0],
+	goodsValue = document.getElementsByClassName('goods-value')[0],
+	itemsX = document.getElementsByClassName('items')[0],
+	itemsValue = document.getElementsByClassName('items-value')[0],
 	employers = document.getElementsByClassName('employers'),
-	employersValue = document.getElementsByClassName('employers-value'),
-	discountX = document.getElementsByClassName('discount'),
-	discountValue = document.getElementsByClassName('discount-value'),
-	isopenX = document.getElementsByClassName('isopen'),
-	isopenValue = document.getElementsByClassName('isopen-value');
+	employersValue = document.getElementsByClassName('employers-value')[0],
+	discountX = document.getElementsByClassName('discount')[0],
+	discountValue = document.getElementsByClassName('discount-value')[0],
+	isopenX = document.getElementsByClassName('isopen')[0],
+	isopenValue = document.getElementsByClassName('isopen-value')[0];
 
+console.log(isopenValue);
 
-var goodsTtem = document.getElementsByClassName('goods-item');
+var goodsTtem = document.getElementsByClassName('goods-item')[0];
 
-var btn = document.getElementsByTagName('button');
-	goodsItemBtn = btn[0];
-	countBudgetBtn = btn[1];
-	hireEmployersBtn = btn[2];
+var goodsItemBtn = document.getElementsByTagName('button')[1],
+	countBudgetBtn = document.getElementsByTagName('button')[2],
+	hireEmployersBtn = document.getElementsByTagName('button')[3];
 	
-var	goods_1 = document.querySelector('#goods_1'),
-	goods_2 = document.querySelector('#goods_2'),
-	goods_3 = document.querySelector('#goods_3'),
-	goods_4 = document.querySelector('#goods_4'),
+var	goods1 = document.querySelector('#goods_1'),
+	goods2 = document.querySelector('#goods_2'),
+	goods3 = document.querySelector('#goods_3'),
+	goods4 = document.querySelector('#goods_4'),
 	time = document.querySelector('#time'),
-	budgetX = document.querySelector('#budget');
+	budgetXX = document.querySelector('#budget');
 
 var	hireEmployersItem = document.querySelectorAll('.hire-employers-item');
 

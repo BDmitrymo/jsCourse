@@ -20,12 +20,12 @@ tl.textContent = 'Подлинную';
 var advertising = document.getElementsByClassName('adv');
 advertising[0].remove();
 
-/* Спросить у пользователя отношение к технике apple и записать ответ в поле "prompt" 
+/* Спросить у пользователя отношение к технике apple и записать ответ в поле "prompt" */
 var sqr = prompt('Какое отношение к технике apple у Вас', ''),
 	pmpt = document.getElementById('prompt');
 
 	pmpt.innerHTML = sqr;
-*/
+
 
 
 
