@@ -1,34 +1,34 @@
-let	money,
-	name,
+var	money,
+	nameX,
 	time,
 	price;
 
 function start() {
 	money = prompt('Ваш бюджет на месяц?', '');
 
-	while (isNaN(money) || money == '' || money == null) {
+	while (isNaN(money) || money === '' || money === null) {
 		money = prompt('Ваш бюджет состоит из цифр, а не букв, повторите ввод!', '');	
 	}
 
-	name = prompt('Название вашего магазина?', '').toUpperCase();
+	nameX = prompt('Название вашего магазина?', '').toUpperCase();
 	time = 19;
 }
 //start();
 
-let	mainList = {
+var	mainList = {
 	budget: money, 
-	nameStore: name, 
-	shopGoods: [,'Кросовки', 'Штаны', 'Футболки', 'Шорты'],
+	nameStore: nameX, 
+	shopGoods: ['Кросовки', 'Штаны', 'Футболки', 'Шорты'],
 	typeGoods: [],
 	employers: {},
 	open: false,
 	discount: false,
 	shopItems: [],
 	chooseGoods: function chooseGoods() {
-		for (let i = 0; i < 5; i++){
-			let a =  prompt('Какой тип товаров будем продавать?', '');
+		for (var i = 0; i < 5; i++){
+			var a =  prompt('Какой тип товаров будем продавать?', '');
 
-			if ((typeof(a)) === 'string' && a != '' && a.length < 50) {
+			if ((typeof(a)) === 'string' && a !== '' && a.length < 50) {
 				console.log('Все верно!');
 				mainList.shopGoods[i] = a; 
 			} else {
@@ -52,18 +52,18 @@ let	mainList = {
 		alert(mainList.budget / 30 + ' руб бюджет пользователя на 1 день');
 	},
 	switchDiscount: function switchDiscount (disc) {
-		if (disc == true) {
-			let res = price * 80 / 100;
-			alert('Скидка составит ' + res + ' руб')
+		if (disc === true) {
+			var res = price * 80 / 100;
+			alert('Скидка составит ' + res + ' руб');
 		} else {
 			alert('Скидка 80% не АКТИВИРОВАНА!');
 		}
 	},
 	employmentEmployers: function employmentEmployers () {
-		for (let i = 0; i < 4; i++){
-			let res = prompt('Введите имя нового сотрудника', '');
+		for (var i = 0; i < 4; i++){
+			var res = prompt('Введите имя нового сотрудника', '');
 
-			if ((typeof(res)) === 'string' && res != '' && res.length < 20){
+			if ((typeof(res)) === 'string' && res !== '' && res.length < 20){
 				mainList.employers[i] = res;
 			} else {
 				i = i - 1;
@@ -71,17 +71,17 @@ let	mainList = {
 		}
 	},
 	chooseShopItems: function chooseс(){
-		let items = prompt('Перечислите товары через запятую', '');
+		var items = prompt('Перечислите товары через запятую', '');
 
 		mainList.shopItems = items.split(',');
 		mainList.shopItems.push(prompt('Подождите ,все товары занесли?', ''));
 		mainList.shopItems.sort();
 	},
 	sqrGoods: function sqrGoods(){
-		for (let i = 0; i < 5; i++){
-			let sqr =  prompt('Добавить тип товара', '');
+		for (var i = 0; i < 5; i++){
+			var sqr =  prompt('Добавить тип товара', '');
 
-			while(!(isNaN(sqr)) || sqr === '' || sqr == null) {
+			while(!(isNaN(sqr)) || sqr === '' || sqr === null) {
 				sqr =  prompt('В базу данных не был добавлен тип, т.к. обнуражины цифры, повторите');
 			} 
 			
