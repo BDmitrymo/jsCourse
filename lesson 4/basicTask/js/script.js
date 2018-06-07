@@ -25,9 +25,9 @@ console.log(mainList);
 /* Задача 2 */
 var arr = mainList.shopGoods;
 
-arr.forEach(function(element, index){
-	document.write("У нас вы можете купить: " + index + ' ' + element + '<br />');
-});
+	mainList.shopItems.forEach(function(item, i, arr){
+		alert("У нас вы можете купить: " + (i+1) + ' - ' + item);
+	});
 
 
 /* Задача 3 */
