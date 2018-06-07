@@ -1,3 +1,5 @@
+
+/*jshint esversion: 6 */
 var openBtn = document.getElementById('open-btn'),
 	nameX = document.getElementsByClassName('name')[0],
 	nameValue = document.getElementsByClassName('name-value')[0], 
@@ -22,6 +24,7 @@ var openBtn = document.getElementById('open-btn'),
 	goods2 = document.querySelector('#goods_2'),
 	goods3 = document.querySelector('#goods_3'),
 	goods4 = document.querySelector('#goods_4'),
+	hei = document.querySelectorAll('.hire-employers-item');
 	employers1 = document.querySelector('#employers_1'),
 	employers2 = document.querySelector('#employers_2'),
 	employers3 = document.querySelector('#employers_3'),
@@ -44,7 +47,7 @@ openBtn.addEventListener('click', () => {
 
 	mainList.discount = confirm('Активировть скидку?', '');
 
-	if (mainList.discount == true) {mainList.discount
+	if (mainList.discount === true) {mainList.discount
 		discountValue.style.backgroundColor = 'green';
 		var res = money * 80 / 100;
 		alert('Ваша скидка составит от бюджета ' + res + ' руб');
@@ -69,7 +72,7 @@ goodsItemBtn.addEventListener('click', () => {
 chooseItem.addEventListener('change', () => {
 	var items = chooseItem.value;
 
-	if(isNaN(items) && items != '') {
+	if(isNaN(items) && items !== '') {
 		mainList.shopItems = items.split(',');
 		mainList.shopItems.sort();
 		itemsValue.textContent = mainList.shopItems;
@@ -91,11 +94,14 @@ timeValue.addEventListener('change', () => {
 					console.log('В сутках только 24 часа!');
 				}
 
-	if(mainList.open == true) {
+	if(mainList.open === true) {
 		isopenValue.style.backgroundColor = 'green';
 		openBtn.removeAttribute('disabled'),
 		countBudgetBtn.removeAttribute('disabled');
-	} else if(mainList.open == false) {
+		openBtn.style.border = '3px solid green';
+		openBtn.style.color = 'green';
+		mainList.check();
+	} else if(mainList.open === false) {
 		isopenValue.style.backgroundColor = 'red';
 		openBtn.setAttribute('disabled', ''),
 		countBudgetBtn.setAttribute('disabled', ''),
@@ -128,22 +134,24 @@ var	mainList = {
 	discount: false,
 	shopItems: [],
 	openShop: function openShop (){
-		if(mainList.open == false) {
+		if(mainList.open === false) {
 			openBtn.setAttribute('disabled', ''),
 			goodsItemBtn.setAttribute('disabled', ''),
 			countBudgetBtn.setAttribute('disabled', ''),
 			hireEmployersBtn.setAttribute('disabled', '');
+			openBtn.style.border = '3px solid red';
+			openBtn.style.color = 'red';
 		} 
 	},
 	
 	check: function check(){
-		goods1.setAttribute('onkeyup', 'mainList.check()');
-		goods2.setAttribute('onkeyup', 'mainList.check()');
-		goods3.setAttribute('onkeyup', 'mainList.check()');
-		goods4.setAttribute('onkeyup', 'mainList.check()');
-		employers1.setAttribute('onkeyup', 'mainList.check()');
-		employers2.setAttribute('onkeyup', 'mainList.check()');
-		employers3.setAttribute('onkeyup', 'mainList.check()');
+		for(var i = 0; i < goodsItem.length; i++) {
+			goodsItem[i].setAttribute('onkeyup', 'mainList.check()');
+		}
+
+		for(var i = 0; i < hei.length; i++) {
+			hei[i].setAttribute('onkeyup', 'mainList.check()');
+		}
 
 		goodsItemBtn.disabled = goods1.value && goods2.value && goods3.value && goods4.value ? false : "disabled";
 		hireEmployersBtn.disabled = employers1.value && employers2.value && employers3.value ? false : "disabled";
@@ -152,7 +160,7 @@ var	mainList = {
 
 countBudgetValue.setAttribute('disabled', '');
 mainList.openShop();
-mainList.check();
+
 
 
 
