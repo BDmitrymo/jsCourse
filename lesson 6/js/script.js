@@ -106,6 +106,8 @@ timeValue.addEventListener('change', () => {
 		openBtn.setAttribute('disabled', ''),
 		countBudgetBtn.setAttribute('disabled', ''),
 		hireEmployersBtn.setAttribute('disabled', '');
+		openBtn.style.border = '3px solid red';
+		openBtn.style.color = 'red';
 	}
 
 	
@@ -118,9 +120,14 @@ countBudgetBtn.addEventListener('click', () => {
 hireEmployersBtn.addEventListener('click', () => {
 	for (var i = 0; i < hireEmployersItem.length; i++){
 		var nameE = hireEmployersItem[i].value;
+
 		mainList.employers[i] = nameE;
 		employersValue.textContent += mainList.employers[i] + ', ';
+		if(employersValue.textContent.length >= 3) {
+			hireEmployersBtn.setAttribute('disabled', '');
+		}
 	}
+
 });
 
 
@@ -152,6 +159,7 @@ var	mainList = {
 		for(var i = 0; i < hei.length; i++) {
 			hei[i].setAttribute('onkeyup', 'mainList.check()');
 		}
+
 
 		goodsItemBtn.disabled = goods1.value && goods2.value && goods3.value && goods4.value ? false : "disabled";
 		hireEmployersBtn.disabled = employers1.value && employers2.value && employers3.value ? false : "disabled";
