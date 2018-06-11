@@ -123,6 +123,7 @@ hireEmployersBtn.addEventListener('click', () => {
 
 		mainList.employers[i] = nameE;
 		employersValue.textContent += mainList.employers[i] + ', ';
+
 		if(employersValue.textContent.length >= 3) {
 			hireEmployersBtn.setAttribute('disabled', '');
 		}
