@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	});
 
 	//Timer
-	var deadline = '2018-06-13 GMT+03:00';
+	var deadline = '2018-07-13 GMT+03:00';
 
 	function getTimeRemaining (endtime){
 		var dateX = new Date();
