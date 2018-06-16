@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 
-	blockTab.addEventListener('click', (event) => {
+	blockTab.addEventListener('click', function (event) {
 		let target = event.target;
 		if(target.className == 'info-header-tab') {
 			for(let i = 0; i < tab.length; i++){
@@ -87,8 +87,6 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 		updateClock();
 	}
-
-		
 	setClock('timer', deadline);
 
 	//Modal
@@ -121,23 +119,6 @@ window.addEventListener('DOMContentLoaded', function() {
 		dBtn.classList.remove('more-splash');
 		document.body.style.overflow = 'auto';
 	});
-
-	//ES6
-	class options {
-		constructor (height, width, bg, fontSize, textAlign){
-			this.height = height;
-			this.width = width;
-			/*this.bg = bg;
-			this.fontSize = fontSize;
-			this.textAlign = textAlign;*/
-		}
-
-		addDiv(){
-			console.log(this.height + ' ' + this.width)
-		}
-	}
-
-	const sqr = new options(10, 10);
 
 }); 
 
