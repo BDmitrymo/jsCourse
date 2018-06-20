@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 	$('.close').on('click', function() {
 		$('.overlay').fadeTo(3000, 0).fadeOut(200);
-		$('.modal').animate({marginTop: '0px'}, 3000).fadeOut(200);	
+		$('.modal').animate({marginTop: '0px',height: '0'}, 1500).fadeOut(100);	
 	});
 
 })
