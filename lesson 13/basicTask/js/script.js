@@ -6,6 +6,15 @@ $(document).ready(function(){
 		$('.modal').animate({marginTop: '80px'}, 3000);
 	});
 
+	$('.main_nav nav>ul li:eq(1)').on('click', function() {
+		$('.overlay').fadeTo(2000, 1.5);
+		$('.modal').css('display','block');
+		$('.modal').animate({
+			width: '70%',
+			marginTop: '80px'
+		}, 1500);
+	});
+
 
 	$('.close').on('click', function() {
 		$('.overlay').fadeTo(3000, 0).fadeOut(200);
