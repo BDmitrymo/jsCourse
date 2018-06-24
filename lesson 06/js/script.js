@@ -131,7 +131,7 @@ function strRus() {
 	input.oninput = function() { 
 
 	let nameInput = this.value,
-		strRusZ = /[^А-ЯЁ]/i;
+		strRusZ = /[-\.;":'+/[^А-ЯЁ]/i;
 
 		if(strRusZ.test(nameInput)){
 			alert('Ввели запрещенный символ');    
