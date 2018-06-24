@@ -87,6 +87,14 @@ timeValue.addEventListener('change', () => {
 	} else if (time > 8 && time < 20) {
 		console.log('Время работать');
 		mainList.open = true;
+		let bb = document.getElementsByClassName('b')[0]
+			color1 = document.getElementsByClassName('zz')[0],
+			color2 = document.getElementsByClassName('zz')[1],
+			color3 = document.getElementsByClassName('zz')[2];
+		color1.classList.add('colorX');
+		color2.classList.add('colorX');
+		color3.classList.add('colorX');
+		bb.classList.add('colorB');
 		} else if (time < 24) {
 			console.log('Уже слишком поздно!');
 			mainList.open = false;
@@ -98,7 +106,7 @@ timeValue.addEventListener('change', () => {
 		isopenValue.style.backgroundColor = 'green';
 		openBtn.removeAttribute('disabled'),
 		countBudgetBtn.removeAttribute('disabled');
-		openBtn.style.border = '3px solid green';
+		openBtn.style.border = 'none';
 		openBtn.style.color = 'green';
 		mainList.check();
 	} else if(mainList.open === false) {
@@ -106,7 +114,7 @@ timeValue.addEventListener('change', () => {
 		openBtn.setAttribute('disabled', ''),
 		countBudgetBtn.setAttribute('disabled', ''),
 		hireEmployersBtn.setAttribute('disabled', '');
-		openBtn.style.border = '3px solid red';
+		openBtn.style.border = 'none';
 		openBtn.style.color = 'red';
 	}
 
@@ -117,18 +125,46 @@ countBudgetBtn.addEventListener('click', () => {
 	countBudgetValue.value = money / 30;
 });
 
+function strRus() {
+	let input = document.querySelectorAll('.hire-employers-item')[0];
+
+	input.oninput = function() { 
+
+	let nameInput = this.value,
+		strRusZ = /[^А-ЯЁ]/i;
+
+		if(strRusZ.test(nameInput)){
+			alert('Ввели запрещенный символ');    
+			return false;
+			//input.innerHTML = '';
+		} 
+	}
+};
+//strRus();
+
 hireEmployersBtn.addEventListener('click', () => {
-	for (var i = 0; i < hireEmployersItem.length; i++){
-		var nameE = hireEmployersItem[i].value;
+	employersValue.textContent = '';
+
+	for (let i = 0; i < hireEmployersItem.length; i++){
+
+		let nameE = hireEmployersItem[i].value;
+
+		let nameInput = nameE,
+			strRusZ = /[^А-ЯЁ]/i;
+
+		if(strRusZ.test(nameInput)){
+			alert('Сотрудники магазина вводятся, только на русском языке!');    
+			return false;
+		} 
 
 		mainList.employers[i] = nameE;
 		employersValue.textContent += mainList.employers[i] + ', ';
-
+		
 		if(employersValue.textContent.length >= 3) {
 			hireEmployersBtn.setAttribute('disabled', '');
 		}
-	}
 
+	}
 });
 
 

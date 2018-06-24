@@ -2,10 +2,25 @@
   box-sizing: border-box;
 }
 body {
-  height: 670px;
-  background: url(../img/bg.jpg) center no-repeat;
+  height: 100%;
+  padding: 5% 0 10%;
+  /*background: url(../img/bg.jpg) center no-repeat;*/
+  
+background: #000000; /* Old Browsers */
+background: -webkit-linear-gradient(top,#000000,#632323); /*Safari 5.1-6*/
+background: -o-linear-gradient(top,#000000,#632323); /*Opera 11.1-12*/
+background: -moz-linear-gradient(top,#000000,#632323); /*Fx 3.6-15*/
+background: linear-gradient(to bottom, #000000, #632323); /*Standard*/
   background-size: cover;
   word-break: break-all;
+}
+
+.colorB {
+  background: #000000; /* Old Browsers */
+  background: -webkit-linear-gradient(top,#000000,#174a14); /*Safari 5.1-6*/
+  background: -o-linear-gradient(top,#000000,#174a14); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(top,#000000,#174a14); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, #000000, #174a14); /*Standard*/
 }
 .open {
   display: -webkit-box;
@@ -21,26 +36,22 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #000;
+     border-radius: 70px;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
   width: 350px;
-  height: 100px;
+  height: 80px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-bottom: 70px;
 }
-.open:before {
-  content: "";
-  display: block;
-  position: absolute;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
-  width: 8px;
-  height: 20px;
-  background-color: #000;
-  margin: 0 auto;
-  -webkit-transform: translateY(-60px);
-      -ms-transform: translateY(-60px);
-          transform: translateY(-60px);
+
+.colorZ {
+box-shadow: 1px 1px 92px 9px rgba(235,33,33,1);
 }
+
+.colorX {
+  box-shadow: 1px 1px 92px 9px rgba(33,236,131,0.68);
+}
+
 .open-btn {
   border: none;
   outline: none;
@@ -64,6 +75,7 @@ body {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
+          font-family: 'Roboto', sans-serif;
 }
 .main-info {
   display: -webkit-box;
@@ -88,7 +100,7 @@ body {
   min-height: 400px;
   padding: 20px;
   background-color: #fff;
-  border: 1px solid black;
+
 }
 .main-info .name,
 .main-info .name-value,
