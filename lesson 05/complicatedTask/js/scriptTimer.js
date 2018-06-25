@@ -7,7 +7,6 @@ let date = new Date(),
 	numberDate = date.getDate(),
 	resBtn = document.getElementById('resBtn');
 
-
 function editDate() {
 	let clock = document.getElementById('clock');
 	
@@ -37,7 +36,6 @@ resBtn.addEventListener('click', function() {
 		dateTwo = document.getElementById('dateTwo'),
 		s = document.getElementById('s');
 
-	
 	let str1 = dateOne.value.split('-'),
 		arr1 = str1[2],
 		ss1;

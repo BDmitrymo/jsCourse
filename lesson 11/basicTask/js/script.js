@@ -129,8 +129,6 @@ window.addEventListener('DOMContentLoaded', function() {
 		input = form.getElementsByTagName('input'),
 		statusMessage = document.createElement('div');
 
-		//statusMessage.classList.add('status');
-
 		form.addEventListener('submit', function(event){
 			event.preventDefault();
 			form.appendChild(statusMessage);

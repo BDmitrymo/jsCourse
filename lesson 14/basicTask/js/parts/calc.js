@@ -46,7 +46,7 @@ function calc() {
  			persons.value = personsSum;
 			restDays.value = daySum;
  		}
-	}
+	};
 
 	persons.addEventListener('change', function(){
 		personsSum = parseInt(this.value, 10);

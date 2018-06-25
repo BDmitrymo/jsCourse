@@ -2,7 +2,7 @@
 function sum(a, b) {
 	return a + b > 10;
 }
-sum(2,12)
+sum(2,12);
 
 //2
 let arr = [ [1, 2, 3], [4, 5, 6], [7,8,9] ];
