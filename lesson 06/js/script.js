@@ -125,23 +125,6 @@ countBudgetBtn.addEventListener('click', () => {
 	countBudgetValue.value = money / 30;
 });
 
-function strRus() {
-	let input = document.querySelectorAll('.hire-employers-item')[0];
-
-	input.oninput = function() { 
-
-	let nameInput = this.value,
-		strRusZ = /[-\.;":'+/[^А-ЯЁ]/i;
-
-		if(strRusZ.test(nameInput)){
-			alert('Ввели запрещенный символ');    
-			return false;
-			//input.innerHTML = '';
-		} 
-	}
-};
-//strRus();
-
 hireEmployersBtn.addEventListener('click', () => {
 	employersValue.textContent = '';
 
@@ -158,8 +141,8 @@ hireEmployersBtn.addEventListener('click', () => {
 		} 
 
 		mainList.employers[i] = nameE;
-		employersValue.textContent += mainList.employers[i] + ', ';
-		
+		let xx = employersValue.textContent += mainList.employers[i] + ', ';
+
 		if(employersValue.textContent.length >= 3) {
 			hireEmployersBtn.setAttribute('disabled', '');
 		}
