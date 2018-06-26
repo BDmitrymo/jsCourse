@@ -243,7 +243,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	showSlides(slideIndex); 
 
 	function plusSlides(n){
-		showSlides(slideIndex += n);
+		showSlides(slideIndex +=  n);
 	};
 
 	function currentSlide(n){

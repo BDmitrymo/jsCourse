@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>END</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+	<div class="tabbed">
+	    <input type="radio" name="tabs" id="tab-nav-1" checked>
+	    <label for="tab-nav-1">Слайдер</label>
+	    <input type="radio" name="tabs" id="tab-nav-2">
+	    <label for="tab-nav-2">Калькулятор</label>
+	    <input type="radio" name="tabs" id="tab-nav-3">
+	    <label for="tab-nav-3">Эффект расслоения при наведении на изображение</label>
+	    <div class="tabs">
+	    <div>
+	    	<div class="slider">  
+				<ul class="js__slider__images slider__images">
+				  <li class="slider__images-item"><img class="slider__images-image" src="https://unsplash.it/800/450?image=830" /></li>
+				  <li class="slider__images-item"><img class="slider__images-image" src="https://unsplash.it/800/450?image=1028" /></li>
+				  <li class="slider__images-item"><img class="slider__images-image" src="https://unsplash.it/800/450?image=981" /></li>
+				  <li class="slider__images-item"><img class="slider__images-image" src="https://unsplash.it/800/450?image=1026" /></li>
+				  <li class="slider__images-item"><img class="slider__images-image" src="https://unsplash.it/800/450?image=741" /></li>
+				</ul>
+			    <div class="slider__controls">
+			      <span class="slider__control js__slider__control--prev slider__control--prev">Prev</span>     
+			      <ol class="js__slider__pagers slider__pagers"></ol>
+			      <span class="slider__control js__slider__control--next slider__control--next">Next</span>
+			    </div>
+  			</div>
+	    </div>
+	    <div>
+	    	<div class="container">  
+            	<div class="view">0</div>
+        	</div>
+	    </div>
+	    <div><div class="portrait" id="portrait">
+   <div class="fill cover-img"></div>
+   <div class="fill z-10 hover">
+      <div class="fill cover-img hover-img"></div>
+   </div>
+</div></div>
+    </div>
+  </div>
+  	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+	<script src="script.js"></script>
+</body>
+</html>
