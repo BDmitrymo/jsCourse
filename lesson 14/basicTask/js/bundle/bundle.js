@@ -123,7 +123,7 @@ function calc() {
 
 	persons.onkeypress = function(event) {   
 		// делаем запреженный список символов
-		let characters = "+.,?e";
+		let characters = "+.,?e-";
 
 		// записали в перпеменную событие, нажав на символ
 		let key = String.fromCharCode(event.which);
@@ -137,7 +137,7 @@ function calc() {
 	};
 
 	restDays.onkeypress = function(event) {   
-		let characters = "+.,?e",
+		let characters = "+.,?e-",
 		    key = String.fromCharCode(event.which);
    
 		if(characters.indexOf(key) >= 0){
