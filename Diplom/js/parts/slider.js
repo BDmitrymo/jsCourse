@@ -1,4 +1,5 @@
 function slider() {
+	
 	let itemSlider = document.getElementsByClassName('main-slider-item'),
 		q =  document.getElementById('z'),
 		qq =  document.getElementById('zz'),
@@ -48,7 +49,7 @@ function slider() {
 				// определить, сколько прошло времени с начала анимации
 				var timePassed = time - start;
 
-				console.log(time, start)
+				//console.log(time, start)
 				// возможно небольшое превышение времени, в этом случае зафиксировать конец
 				//if (timePassed > duration) timePassed = duration;
 

@@ -2,13 +2,37 @@
 window.addEventListener('DOMContentLoaded', function() {
 
 	let slider = require('../parts/slider.js');
+	let modal = require('../parts/modal.js');
 
+	modal();
 	slider();
-	
 
 }); 
-},{"../parts/slider.js":2}],2:[function(require,module,exports){
+},{"../parts/modal.js":2,"../parts/slider.js":3}],2:[function(require,module,exports){
+function modal() {
+
+	let btn1 = document.getElementsByClassName('more-about')[0],
+		btn2 = document.getElementsByClassName('more-about')[1],
+		modal = document.getElementsByClassName('popup-consultation')[0],
+		modalClose = document.getElementsByClassName('popup-close')[0];
+
+	btn1.addEventListener('click', function() {
+		modal.style.display = 'block';
+	})
+
+	btn2.addEventListener('click', function() {
+		modal.style.display = 'block';
+	})
+
+	modalClose.addEventListener('click', function() {
+		modal.style.display = 'none';
+	})
+}
+
+module.exports = modal;
+},{}],3:[function(require,module,exports){
 function slider() {
+	
 	let itemSlider = document.getElementsByClassName('main-slider-item'),
 		q =  document.getElementById('z'),
 		qq =  document.getElementById('zz'),
@@ -58,7 +82,7 @@ function slider() {
 				// определить, сколько прошло времени с начала анимации
 				var timePassed = time - start;
 
-				console.log(time, start)
+				//console.log(time, start)
 				// возможно небольшое превышение времени, в этом случае зафиксировать конец
 				//if (timePassed > duration) timePassed = duration;
 
