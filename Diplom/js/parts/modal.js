@@ -7,6 +7,9 @@ function modal() {
 		btnOrder2 = document.getElementsByClassName('btn-order')[1],
 		btnOrder3 = document.getElementsByClassName('btn-order')[2],
 		btnOrder4 = document.getElementsByClassName('btn-order')[3],
+		btnOrder5 = document.getElementsByClassName('btn-order')[4],
+		btnOrder6 = document.getElementsByClassName('btn-order')[5],
+		btnOrder7 = document.getElementsByClassName('btn-order')[6],
 		modal = document.getElementsByClassName('popup-consultation')[0],
 		modalOrder = document.getElementsByClassName('popup-design')[0],
 		modalMoreClose = document.getElementsByClassName('close-more')[0],
@@ -38,6 +41,18 @@ function modal() {
 	});
 
 	btnOrder4.addEventListener('click', function() {
+		modalOrder.style.display = 'block';
+	});
+
+	btnOrder5.addEventListener('click', function() {
+		modalOrder.style.display = 'block';
+	});
+
+	btnOrder6.addEventListener('click', function() {
+		modalOrder.style.display = 'block';
+	});
+
+	btnOrder7.addEventListener('click', function() {
 		modalOrder.style.display = 'block';
 	});
 
