@@ -10,32 +10,48 @@ function block_loading() {
 		btnStyleOpen.style.display = 'none';
 		function hiddenSlider(n) {
 
-		if (n > hiddenItemSlider.length) {
-			hiddenIndex = 1;
-		}
+			if (n > hiddenItemSlider.length) {
+				hiddenIndex = 1;
+			}
 
-		if (n < 1) {
-			hiddenIndex = hiddenItemSlider.length;
-		}
+			if (n < 1) {
+				hiddenIndex = hiddenItemSlider.length;
+			}
 
-		for (let i = 0; i < hiddenItemSlider.length; i++) {
-			hiddenItemSlider[i].style.display = 'none';
-		}
+			for (let i = 0; i < hiddenItemSlider.length; i++) {
+				hiddenItemSlider[i].style.display = 'none';
+			}
 
-		hiddenItemSlider[hiddenIndex-1].style.display = 'block';
-	};
+			hiddenItemSlider[hiddenIndex-1].style.display = 'block';
+		};
 
-	hiddenSlider();
+		hiddenSlider();
 
-	setInterval(function() {
+		setInterval(function() {
 
-		let num = 1;
+			let num = 1;
 
-		hiddenSlider(hiddenIndex += num);
+			hiddenSlider(hiddenIndex += num);
 
-	}, 4000);
+		}, 4000);
 
 	});
+
+	// гамбургер
+	let btnGamb = document.getElementsByClassName('burger')[0],
+		gambOpen = document.getElementsByClassName('burger-menu')[0];
+	
+
+	if(document.body.offsetWidth < 768){
+		
+		btnGamb.onclick = function gamburger() {
+			gambOpen.style.display = gambOpen.style.display == "block" ? "none" : "block";
+  		}
+	}
+
+	if(document.body.offsetWidth > 768){
+		btnGamb.style.display = 'none';
+	}
 }
 
 module.exports = block_loading;
