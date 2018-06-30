@@ -43,7 +43,6 @@ function modal() {
 	modalOrderClose.addEventListener('click', function() {
 		modalOrder.style.display = 'none';
 	});
-
 }
 
 module.exports = modal;

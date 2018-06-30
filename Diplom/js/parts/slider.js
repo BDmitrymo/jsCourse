@@ -1,13 +1,13 @@
 function slider() {
 	
 	let itemSlider = document.getElementsByClassName('main-slider-item'),
-		q =  document.getElementById('z'),
-		qq =  document.getElementById('zz'),
+		main1 =  document.getElementById('main1'),
+		main2 =  document.getElementById('main2'),
 		sliderIndex = 1;
 
 	function showSlider(n){ 
 
-		if(n > itemSlider.length){
+		if (n > itemSlider.length){
 			sliderIndex = 1;
 		}
 	
@@ -20,8 +20,6 @@ function slider() {
 		};
 
 		itemSlider[sliderIndex-1].style.display = 'block';
-
-
 	};
 
 	showSlider(); 
@@ -34,29 +32,20 @@ function slider() {
 			
         animate(function(timePassed) {
 
-	        q.style.top = timePassed / 40 + 'px';
-	        qq.style.top = timePassed / 40 + 'px';
-
-	        //console.log(q);
-	  
+	        main1.style.top = timePassed / 40 + 'px';
+	        main2.style.top = timePassed / 40 + 'px';
 
 	     }, 1000);
 
 		function animate(draw, duration) {
-			var start = performance.now();
+			let start = performance.now();
 
 			requestAnimationFrame(function animate(time) {
-				// определить, сколько прошло времени с начала анимации
-				var timePassed = time - start;
 
-				//console.log(time, start)
-				// возможно небольшое превышение времени, в этом случае зафиксировать конец
-				//if (timePassed > duration) timePassed = duration;
+				let timePassed = time - start;
 
-				// нарисовать состояние анимации в момент timePassed
 				draw(timePassed);
 
-				// если время анимации не закончилось - запланировать ещё кадр
 				if (timePassed < duration) {
 					requestAnimationFrame(animate);
 				}

@@ -3,13 +3,57 @@ window.addEventListener('DOMContentLoaded', function() {
 
 	let slider = require('../parts/slider.js');
 	let modal = require('../parts/modal.js');
+	let block_loading = require('../parts/block_loading.js');
 	
 
 	slider();
 	modal();
+	block_loading();
 
 }); 
-},{"../parts/modal.js":2,"../parts/slider.js":3}],2:[function(require,module,exports){
+},{"../parts/block_loading.js":2,"../parts/modal.js":3,"../parts/slider.js":4}],2:[function(require,module,exports){
+function block_loading() {
+
+	let btnStyleOpen = document.getElementsByClassName('btn-style')[0],
+		hiddenItemOpen = document.getElementsByClassName('hidden-lg')[0],
+
+		hiddenItemSlider = document.getElementsByClassName('hidden-Item'),
+		hiddenIndex = 1;
+
+	btnStyleOpen.addEventListener('click', function() {
+		btnStyleOpen.style.display = 'none';
+		function hiddenSlider(n) {
+
+		if (n > hiddenItemSlider.length) {
+			hiddenIndex = 1;
+		}
+
+		if (n < 1) {
+			hiddenIndex = hiddenItemSlider.length;
+		}
+
+		for (let i = 0; i < hiddenItemSlider.length; i++) {
+			hiddenItemSlider[i].style.display = 'none';
+		}
+
+		hiddenItemSlider[hiddenIndex-1].style.display = 'block';
+	};
+
+	hiddenSlider();
+
+	setInterval(function() {
+
+		let num = 1;
+
+		hiddenSlider(hiddenIndex += num);
+
+	}, 4000);
+
+	});
+}
+
+module.exports = block_loading;
+},{}],3:[function(require,module,exports){
 function modal() {
 
 	let btn1 = document.getElementsByClassName('more-about')[0],
@@ -55,21 +99,20 @@ function modal() {
 	modalOrderClose.addEventListener('click', function() {
 		modalOrder.style.display = 'none';
 	});
-
 }
 
 module.exports = modal;
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 function slider() {
 	
 	let itemSlider = document.getElementsByClassName('main-slider-item'),
-		q =  document.getElementById('z'),
-		qq =  document.getElementById('zz'),
+		main1 =  document.getElementById('main1'),
+		main2 =  document.getElementById('main2'),
 		sliderIndex = 1;
 
 	function showSlider(n){ 
 
-		if(n > itemSlider.length){
+		if (n > itemSlider.length){
 			sliderIndex = 1;
 		}
 	
@@ -82,8 +125,6 @@ function slider() {
 		};
 
 		itemSlider[sliderIndex-1].style.display = 'block';
-
-
 	};
 
 	showSlider(); 
@@ -96,29 +137,20 @@ function slider() {
 			
         animate(function(timePassed) {
 
-	        q.style.top = timePassed / 40 + 'px';
-	        qq.style.top = timePassed / 40 + 'px';
-
-	        //console.log(q);
-	  
+	        main1.style.top = timePassed / 40 + 'px';
+	        main2.style.top = timePassed / 40 + 'px';
 
 	     }, 1000);
 
 		function animate(draw, duration) {
-			var start = performance.now();
+			let start = performance.now();
 
 			requestAnimationFrame(function animate(time) {
-				// определить, сколько прошло времени с начала анимации
-				var timePassed = time - start;
 
-				//console.log(time, start)
-				// возможно небольшое превышение времени, в этом случае зафиксировать конец
-				//if (timePassed > duration) timePassed = duration;
+				let timePassed = time - start;
 
-				// нарисовать состояние анимации в момент timePassed
 				draw(timePassed);
 
-				// если время анимации не закончилось - запланировать ещё кадр
 				if (timePassed < duration) {
 					requestAnimationFrame(animate);
 				}
