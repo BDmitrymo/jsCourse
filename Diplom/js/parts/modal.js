@@ -2,6 +2,7 @@ function modal() {
 
 	let btn1 = document.getElementsByClassName('more-about')[0],
 		btn2 = document.getElementsByClassName('more-about')[1],
+		btn3 = document.getElementsByClassName('more-about')[2],
 		btnOrder1 = document.getElementsByClassName('btn-order')[0],
 		btnOrder2 = document.getElementsByClassName('btn-order')[1],
 		btnOrder3 = document.getElementsByClassName('btn-order')[2],
@@ -16,6 +17,10 @@ function modal() {
 	});
 
 	btn2.addEventListener('click', function() {
+		modal.style.display = 'block';
+	});
+
+	btn3.addEventListener('click', function() {
 		modal.style.display = 'block';
 	});
 
