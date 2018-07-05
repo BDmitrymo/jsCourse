@@ -1079,7 +1079,7 @@ h4 {
   padding: 4rem 6rem 5rem 6rem;
 }
 .popup-gift {
-  z-index: 20;
+  z-index: 1;
   position: fixed;
   display: none;
   top: 0;
@@ -1723,4 +1723,57 @@ h4 {
     padding: 3rem 3rem;
     width: 25rem;
   }
+
+}
+
+.push {
+  width: 260px;
+  height: 30%;
+  padding: 40px;
+  background: #bf6ec4;
+  color: white;
+  top: 40%;
+}
+
+.showX {
+  display: block;
+}
+
+.zz {
+  opacity: 0;
+  transition: 3s;
+}
+
+.zzz {
+  opacity: 1;
+  transition: 3s;
+}
+
+.hideX {
+  display: none;
+}
+
+.often-questions .accordion-block {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: #f7e7e6;
+    padding: 3rem 4rem;
+    z-index: 1;
+}
+
+.black {
+  color: black;
+  border-bottom: 2px dotted #333;
+}
+
+.red {
+  color: #c818bc;
+  border-bottom: none !important;
+}
+
+.showXX {
+  display: block;
+}
+.hideXX {
+  display: none;
 }
