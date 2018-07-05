@@ -462,8 +462,7 @@ function formOpen() {
 		message.failure = "Что-то пошло не так...";
 
 		statusMessage = document.createElement('div');
-		statusMessage.classList.add('popup-content');
-		statusMessage.classList.add('push');
+
 
 	// модальное окно формы
 	let nameForm = document.getElementsByClassName('nameForm')[0],
@@ -500,7 +499,7 @@ function formOpen() {
 
 	let formM = document.getElementsByClassName('modalFormOpen')[0],
 		inputX = formM.getElementsByTagName('input');
-
+/*
 	openForm1.onclick = function() {
 		setInterval(function(){
 			location.reload();
@@ -518,7 +517,7 @@ function formOpen() {
 			location.reload();
 		}, 1000);
 	}
-
+*/
 	formM.addEventListener('submit', function(event){
 
 		event.preventDefault();
@@ -539,11 +538,6 @@ function formOpen() {
 			} else if (request.readyState === 4) {
 				if (request.status == 200 && request.status < 300) {
 					statusMessage.innerHTML = message.success;
-
-					setInterval(function() {
-						statusMessage.style.display = 'none';
-						closeForm.style.display = 'none';
-					}, 2000)
 					
 				} else {
 					statusMessage.innerHTML = message.failure;
@@ -605,11 +599,6 @@ function formOpen() {
 			} else if (request.readyState === 4) {
 				if (request.status == 200 && request.status < 300) {
 					statusMessage.innerHTML = message.success;
-
-					setInterval(function() {
-						statusMessage.style.display = 'none';
-					}, 2000);
-
 				} else {
 					statusMessage.innerHTML = messageX.failure;
 				}
@@ -670,11 +659,6 @@ function formOpen() {
 			} else if (request.readyState === 4) {
 				if (request.status == 200 && request.status < 300) {
 					statusMessage.innerHTML = message.success;
-
-					setInterval(function() {
-						statusMessage.style.display = 'none';
-						closeModals.style.display = 'none';
-					}, 2000);
 					//добавляем контент на страницу
 				} else {
 					statusMessage.innerHTML = message.failure;
